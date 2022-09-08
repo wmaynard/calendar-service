@@ -13,6 +13,7 @@ public class EventController : PlatformController
     private readonly EventService _eventService;
 #pragma warning restore
 
+    // Gets all events stored in Mongo
     [HttpGet]
     public ObjectResult GetEvents()
     {
