@@ -1,6 +1,8 @@
 using System.Text.Json.Serialization;
 using MongoDB.Bson.Serialization.Attributes;
 using Rumble.Platform.Common.Models;
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable ArrangeAttributes
 
 namespace Rumble.Platform.CalendarService.Models;
 
@@ -52,12 +54,12 @@ public class Event : PlatformCollectionDocument
             errors.Add("Description cannot be null.");
         }
 
-        if (Start < 1_000_000_000 || Start >= 10_000_000_000) // in case not s unix time (not 10 digits)
+        if (Start is < 1_000_000_000 or >= 10_000_000_000) // in case not s unix time (not 10 digits)
         {
             errors.Add("Start time is invalid.");
         }
         
-        if (End < 1_000_000_000 || End >= 10_000_000_000) // in case not s unix time (not 10 digits)
+        if (End is < 1_000_000_000 or >= 10_000_000_000) // in case not s unix time (not 10 digits)
         {
             errors.Add("End time is invalid.");
         }
