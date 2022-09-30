@@ -44,6 +44,7 @@ public class Event : PlatformCollectionDocument
     [JsonInclude, JsonPropertyName(FRIENDLY_KEY_END)]
     public long End { get; set; }
     
+    // TODO implement repeating later on
     // [BsonElement(DB_KEY_REPEAT), BsonIgnoreIfNull]
     // [JsonInclude, JsonPropertyName(FRIENDLY_KEY_REPEAT), JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     // public DayOfWeek Repeat { get; set; } // 0-6, 0 starting with sunday
