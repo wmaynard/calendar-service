@@ -30,12 +30,7 @@ public class EventController : PlatformController
         
         long cleared = await _eventService.ClearAll();
 
-        long added = 0;
-        foreach (Event ev in events)
-        {
-            _eventService.Create(ev);
-            added++;
-        }
+        long added = await _eventService.BulkAdd(events);
 
         return Ok(new
                   {
