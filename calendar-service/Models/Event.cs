@@ -11,12 +11,14 @@ public class Event : PlatformCollectionDocument
 {
     internal const string DB_KEY_TITLE       = "title";
     internal const string DB_KEY_DESCRIPTION = "desc";
+    internal const string DB_KEY_TYPE        = "type";
     internal const string DB_KEY_START       = "start";
     internal const string DB_KEY_END         = "end";
     internal const string DB_KEY_REPEAT      = "rpt";
 
     public const string FRIENDLY_KEY_TITLE       = "title";
     public const string FRIENDLY_KEY_DESCRIPTION = "description";
+    public const string FRIENDLY_KEY_TYPE        = "type";
     public const string FRIENDLY_KEY_START       = "start";
     public const string FRIENDLY_KEY_END         = "end";
     public const string FRIENDLY_KEY_REPEAT      = "repeat";
@@ -28,6 +30,10 @@ public class Event : PlatformCollectionDocument
     [BsonElement(DB_KEY_DESCRIPTION)]
     [JsonInclude, JsonPropertyName(FRIENDLY_KEY_DESCRIPTION)]
     public string Description { get; set; }
+    
+    [BsonElement(DB_KEY_TYPE)]
+    [JsonInclude, JsonPropertyName(FRIENDLY_KEY_TYPE)]
+    public string Type { get; set; }
     
     [BsonElement(DB_KEY_START)]
     [JsonInclude, JsonPropertyName(FRIENDLY_KEY_START)]
@@ -52,6 +58,11 @@ public class Event : PlatformCollectionDocument
         if (Description == null)
         {
             errors.Add("Description cannot be null.");
+        }
+
+        if (Type == null)
+        {
+            errors.Add("Type cannot be null.");   
         }
 
         if (Start is < 1_000_000_000 or >= 10_000_000_000) // in case not s unix time (not 10 digits)
