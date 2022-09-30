@@ -21,21 +21,4 @@ public class EventController : PlatformController
 
         return Ok(new {events});
     }
-    
-    // Adds in events to Mongo
-    [HttpPost]
-    public async Task<ObjectResult> AddEvents()
-    {
-        List<Event> events = Require<List<Event>>(key: "events");
-        
-        long cleared = await _eventService.ClearAll();
-
-        long added = await _eventService.BulkAdd(events);
-
-        return Ok(new
-                  {
-                      eventsCleared = cleared,
-                      eventsAdded = added
-                  });
-    }
 }
