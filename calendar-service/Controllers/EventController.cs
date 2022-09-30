@@ -14,7 +14,7 @@ public class EventController : PlatformController
 #pragma warning restore
 
     // Gets all events stored in Mongo
-    [HttpGet]
+    [HttpGet, NoAuth]
     public ObjectResult GetEvents()
     {
         List<Event> events = _eventService.List().ToList();
