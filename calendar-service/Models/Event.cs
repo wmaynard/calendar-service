@@ -31,9 +31,10 @@ public class Event : PlatformCollectionDocument
     [JsonInclude, JsonPropertyName(FRIENDLY_KEY_DESCRIPTION)]
     public string Description { get; set; }
     
+    public enum EventType {Type1, Type2} // TODO figure out what types are used
     [BsonElement(DB_KEY_TYPE)]
     [JsonInclude, JsonPropertyName(FRIENDLY_KEY_TYPE)]
-    public string Type { get; set; }
+    public EventType Type { get; set; }
     
     [BsonElement(DB_KEY_START)]
     [JsonInclude, JsonPropertyName(FRIENDLY_KEY_START)]
