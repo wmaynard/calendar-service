@@ -30,8 +30,17 @@ public class Event : PlatformCollectionDocument
     [BsonElement(DB_KEY_DESCRIPTION)]
     [JsonInclude, JsonPropertyName(FRIENDLY_KEY_DESCRIPTION)]
     public string Description { get; set; }
-    
-    public enum EventType {Undefined, Type1, Type2} // TODO figure out what types are used
+
+    public enum EventType
+    {
+        Undefined,
+        Banners,
+        Calendars,
+        Events,
+        Quests,
+        Sales,
+        Leaderboards
+    }
     [BsonElement(DB_KEY_TYPE)]
     [JsonInclude, JsonPropertyName(FRIENDLY_KEY_TYPE)]
     public EventType Type { get; set; }

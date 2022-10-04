@@ -20,6 +20,7 @@ public class AdminController : PlatformController
     {
         List<Event> events = Require<List<Event>>(key: "events");
         
+        // TODO make sure a failed request doesn't end up clearing all and leaving the database empty
         long cleared = await _eventService.ClearAll();
 
         long added = await _eventService.BulkAdd(events);
