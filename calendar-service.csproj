@@ -2,6 +2,9 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
+        <AssemblyName>calendar-service</AssemblyName>
+        <AssemblyVersion>1.0.*</AssemblyVersion>
+        <Deterministic>false</Deterministic>
         <Nullable>disable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>Rumble.Platform.CalendarService</RootNamespace>
@@ -13,7 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="platform-csharp-common" Version="1.1.64" />
+      <PackageReference Include="platform-csharp-common" Version="1.1.79" />
     </ItemGroup>
 
     <ItemGroup>

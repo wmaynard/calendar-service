@@ -87,28 +87,28 @@ stage-c:
     name: stage-c
     url: https://stage-c.nonprod.tower.cdrentertainment.com/
 
-production:
-  extends: .auto-deploy
-  stage: production
-  variables:
-    KUBE_CONTEXT: "platform-services/platform-services-agent:prod-platform-services"
-    KUBE_INGRESS_BASE_DOMAIN: nonprod.tower.cdrentertainment.com
-    KUBE_NAMESPACE: "cal-service-41-production-platfo-bwm2vh"
-  tags:
-    - production
-  environment:
-    name: production/platform
-    url: https://platform-a.prod.tower.rumblegames.com/
-
-production-b:
-  extends: .auto-deploy
-  stage: production
-  variables:
-    KUBE_CONTEXT: "platform-services/platform-services-agent:prod-platform-services"
-    KUBE_INGRESS_BASE_DOMAIN: nonprod.tower.cdrentertainment.com
-    KUBE_NAMESPACE: "cal-service"
-  tags:
-    - production-b
-  environment:
-    name: production/platform-b
-    url: https://platform-b.prod.tower.rumblegames.com/
+#production:
+#  extends: .auto-deploy
+#  stage: production
+#  variables:
+#    KUBE_CONTEXT: "platform-services/platform-services-agent:prod-platform-services"
+#    KUBE_INGRESS_BASE_DOMAIN: nonprod.tower.cdrentertainment.com
+#    KUBE_NAMESPACE: "cal-service-41-production-platfo-bwm2vh"
+#  tags:
+#    - production
+#  environment:
+#    name: production/platform
+#    url: https://platform-a.prod.tower.rumblegames.com/
+#
+#production-b:
+#  extends: .auto-deploy
+#  stage: production
+#  variables:
+#    KUBE_CONTEXT: "platform-services/platform-services-agent:prod-platform-services"
+#    KUBE_INGRESS_BASE_DOMAIN: nonprod.tower.cdrentertainment.com
+#    KUBE_NAMESPACE: "cal-service"
+#  tags:
+#    - production-b
+#  environment:
+#    name: production/platform-b
+#    url: https://platform-b.prod.tower.rumblegames.com/
