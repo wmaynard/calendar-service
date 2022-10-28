@@ -24,4 +24,17 @@
       <Content Include=".gitlab\dev.values.yaml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="calendar-service\bin\Debug\net6.0\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="calendar-service\bin\Debug\net6.0\appsettings.json" />
+      <_ContentIncludedByDefault Remove="calendar-service\bin\Debug\net6.0\calendar-service.deps.json" />
+      <_ContentIncludedByDefault Remove="calendar-service\bin\Debug\net6.0\calendar-service.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="calendar-service\bin\Debug\net6.0\environment.json" />
+      <_ContentIncludedByDefault Remove="calendar-service\environment.json" />
+      <_ContentIncludedByDefault Remove="calendar-service\obj\calendar-service.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="calendar-service\obj\Debug\net6.0\staticwebassets.build.json" />
+      <_ContentIncludedByDefault Remove="calendar-service\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="calendar-service\obj\project.packagespec.json" />
+    </ItemGroup>
+
 </Project>
