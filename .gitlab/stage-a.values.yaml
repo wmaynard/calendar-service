@@ -52,7 +52,7 @@ gitlab:
 service:
   enabled: true
   annotations: {}
-  name: calendar-stage-a # 15 character limit..
+  name: cal-stage-a # 15 character limit..
   type: NodePort
   url:
   additionalHosts:
