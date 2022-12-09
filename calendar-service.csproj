@@ -22,8 +22,8 @@
     <ItemGroup>
       <Content Include=".gitlab\deploy-k8s.yaml" />
       <Content Include=".gitlab\dev.values.yaml" />
-      <Content Include=".gitlab\prod-a1.yaml" />
-      <Content Include=".gitlab\prod-a2.yaml" />
+      <Content Include=".gitlab\prod-a1.values.yaml" />
+      <Content Include=".gitlab\prod-a2.values.yaml" />
       <Content Include=".gitlab\stage-a.values.yaml" />
     </ItemGroup>
 
