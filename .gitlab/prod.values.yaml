@@ -34,8 +34,8 @@ application:
   secretChecksum:
 hpa:
   enabled: false
-  minReplicas: 1
-  maxReplicas: 1
+  minReplicas: 2
+  maxReplicas: 5
   CPUUtilizationPercentage: 60
   MemUtilizationPercentage: 60
   keda:
