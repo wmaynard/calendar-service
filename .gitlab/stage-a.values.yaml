@@ -22,7 +22,7 @@ affinity: {}
 tolerations: []
 pv:
   storageclass: efs-sc
-  enabled: true
+  enabled: false
   volume_size: 1Gi
   mountPath: /app/shared_storage
 application:
