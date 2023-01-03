@@ -61,8 +61,7 @@ service:
   internalPort: 80
 ingress:
   enabled: true
-  paths:
-    - "/calendar"
+  path: "/calendar"
   tls:
     enabled: false
     acme: false
