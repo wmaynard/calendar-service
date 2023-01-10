@@ -24,6 +24,7 @@
       <Content Include=".gitlab\dev.values.yaml" />
       <Content Include=".gitlab\prod.values.yaml" />
       <Content Include=".gitlab\stage-a.values.yaml" />
+      <Content Include=".gitlab\stage-b.values.yaml" />
     </ItemGroup>
 
     <ItemGroup>
