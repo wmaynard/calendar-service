@@ -15,7 +15,7 @@ public class AdminController : PlatformController
 #pragma warning restore
     
     // Adds in events to Mongo
-    [HttpPost, Route("events")]
+    [HttpPost, Route("events"), HealthMonitor(weight: 1)]
     public async Task<ObjectResult> AddEvents()
     {
         List<Event> events = Require<List<Event>>(key: "events");
