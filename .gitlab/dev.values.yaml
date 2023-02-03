@@ -41,7 +41,7 @@ hpa:
   keda:
     enabled: true
     requestsPerSecond: "5"
-    serverAddress: http://prometheus-prometheus-server.gitlab-managed-apps.svc:80
+    serverAddress: http://prometheus-server.gitlab-managed-apps.svc:80
     filter: "service"
 gitlab:
   app:
