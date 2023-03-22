@@ -38,6 +38,7 @@ dev:
 stage-a:
   extends: .auto-deploy
   stage: staging
+  needs: ["dev"]
   variables:
     KUBE_INGRESS_BASE_DOMAIN: nonprod.tower.cdrentertainment.com
     KUBE_NAMESPACE: "cal-service-41-stage-a"
@@ -50,6 +51,7 @@ stage-a:
 stage-b:
   extends: .auto-deploy
   stage: staging
+  needs: ["dev"]
   tags:
     - cluster
   variables:
@@ -74,6 +76,7 @@ stage-b:
 TT-production-a1:
   extends: .auto-deploy
   stage: production
+  needs: ["stage-a"]
   variables:
     KUBE_CONTEXT: "platform-services/platform-services-agent:prod-a1-platform-services"
     KUBE_INGRESS_BASE_DOMAIN: prod.tower.rumblegames.com
@@ -87,6 +90,7 @@ TT-production-a1:
 TT-production-a1-apse1:
   extends: .auto-deploy
   stage: production
+  needs: ["stage-a"]
   variables:
     KUBE_CONTEXT: "platform-services/platform-services-agent:prod-a1-apse1-platform-services"
     KUBE_INGRESS_BASE_DOMAIN: prod.tower.rumblegames.com
@@ -101,6 +105,7 @@ TT-production-a1-apse1:
 TT-production-a2:
   extends: .auto-deploy
   stage: production-2
+  needs: ["stage-a"]
   variables:
     KUBE_CONTEXT: "platform-services/platform-services-agent:prod-a2-platform-services"
     KUBE_INGRESS_BASE_DOMAIN: prod.tower.rumblegames.com
@@ -114,6 +119,7 @@ TT-production-a2:
 TT-production-a2-apse1:
   extends: .auto-deploy
   stage: production-2
+  needs: ["stage-a"]
   variables:
     KUBE_CONTEXT: "platform-services/platform-services-agent:prod-a2-apse1-platform-services"
     KUBE_INGRESS_BASE_DOMAIN: prod.tower.rumblegames.com
