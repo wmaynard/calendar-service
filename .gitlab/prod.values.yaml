@@ -68,7 +68,8 @@ ingress:
     secretName: "calendar-service-prod"
     useDefaultSecret: false
   annotations:
-    nginx.ingress.kubernetes.io/client-body-buffer-size: 1m
+    nginx.ingress.kubernetes.io/client-body-buffer-size: 5m
+    nginx.ingress.kubernetes.io/proxy-body-size: 5m
   modSecurity:
     enabled: false
     secRuleEngine: "DetectionOnly"
