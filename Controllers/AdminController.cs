@@ -19,16 +19,24 @@ public class AdminController : PlatformController
     public async Task<ObjectResult> AddEvents()
     {
         List<Event> events = Require<List<Event>>(key: "events");
-        
-        // TODO make sure a failed request doesn't end up clearing all and leaving the database empty
-        long cleared = await _eventService.ClearAll();
 
         long added = await _eventService.BulkAdd(events);
 
         return Ok(new
                   {
-                      eventsCleared = cleared,
                       eventsAdded = added
+                  });
+    }
+    
+    // Clears out events
+    [HttpDelete, Route("events"), HealthMonitor(weight: 10)]
+    public async Task<ObjectResult> ClearEvents()
+    {
+        long cleared = await _eventService.ClearAll();
+
+        return Ok(new
+                  {
+                      eventsCleared = cleared
                   });
     }
 }
