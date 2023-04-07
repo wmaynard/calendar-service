@@ -60,6 +60,7 @@ service:
   externalPort: 5000
   internalPort: 80
 ingress:
+  className: nginx
   enabled: true
   path: "/calendar"
   tls:
