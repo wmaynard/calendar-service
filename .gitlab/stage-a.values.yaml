@@ -34,13 +34,13 @@ application:
   secretChecksum:
 hpa:
   enabled: false
-  minReplicas: 1
-  maxReplicas: 1
+  minReplicas: 2
+  maxReplicas: 2
   CPUUtilizationPercentage: 60
   MemUtilizationPercentage: 60
   keda:
     enabled: true
-    requestsPerSecond: "5"
+    requestsPerSecond: "10"
     serverAddress: http://prometheus-server.gitlab-managed-apps.svc:80
     filter: "exported_namespace"
 gitlab:
@@ -60,6 +60,7 @@ service:
   externalPort: 5000
   internalPort: 80
 ingress:
+  className: nginx
   enabled: true
   path: "/calendar"
   tls:
@@ -68,8 +69,8 @@ ingress:
     secretName: "calendar-service-stage-a"
     useDefaultSecret: false
   annotations:
-    nginx.ingress.kubernetes.io/client-body-buffer-size: 5m
-    nginx.ingress.kubernetes.io/proxy-body-size: 5m
+    nginx.ingress.kubernetes.io/client-body-buffer-size: 10m
+    nginx.ingress.kubernetes.io/proxy-body-size: 10m
   modSecurity:
     enabled: false
     secRuleEngine: "DetectionOnly"
