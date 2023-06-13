@@ -35,7 +35,7 @@ application:
 hpa:
   enabled: false
   minReplicas: 2
-  maxReplicas: 2
+  maxReplicas: 5
   CPUUtilizationPercentage: 60
   MemUtilizationPercentage: 60
   keda:
@@ -109,16 +109,16 @@ postgresql:
 resources:
   limits:
     cpu: 128m
-    memory: 128Mi
+    memory: 192Mi
   requests:
     cpu: 128m
-    memory: 128Mi
+    memory: 192Mi
 
 ## Configure PodDisruptionBudget
 ## ref: https://kubernetes.io/docs/concepts/workloads/pods/disruptions/
 #
 podDisruptionBudget:
-  enabled: false
+  enabled: true
   minAvailable: 1
 
 ## Configure NetworkPolicy
