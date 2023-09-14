@@ -63,29 +63,19 @@ public class Event : PlatformCollectionDocument
     {
         errors = new List<string>();
         if (Title == null)
-        {
             errors.Add("Title cannot be null.");
-        }
         
         if (Description == null)
-        {
             errors.Add("Description cannot be null.");
-        }
 
         if (Type == 0)
-        {
-            errors.Add("Type must be defined.");   
-        }
+            errors.Add("Type must be defined.");
 
         if (Start is < 1_000_000_000 or >= 10_000_000_000) // in case not s unix time (not 10 digits)
-        {
             errors.Add("Start time is invalid.");
-        }
         
         if (End is < 1_000_000_000 or >= 10_000_000_000) // in case not s unix time (not 10 digits)
-        {
             errors.Add("End time is invalid.");
-        }
             
     }
 }

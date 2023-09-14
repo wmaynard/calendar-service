@@ -3,6 +3,7 @@ using Rumble.Platform.CalendarService.Models;
 using Rumble.Platform.CalendarService.Services;
 using Rumble.Platform.Common.Attributes;
 using Rumble.Platform.Common.Web;
+using Rumble.Platform.Data;
 
 namespace Rumble.Platform.CalendarService.Controllers;
 
@@ -10,15 +11,13 @@ namespace Rumble.Platform.CalendarService.Controllers;
 public class EventController : PlatformController
 {
 #pragma warning disable
-    private readonly EventService _eventService;
+    private readonly EventService _events;
 #pragma warning restore
 
     // Gets all events stored in Mongo
     [HttpGet, NoAuth, HealthMonitor(weight: 10)]
-    public ObjectResult GetEvents()
+    public ObjectResult GetEvents() => Ok(new RumbleJson
     {
-        List<Event> events = _eventService.List().ToList();
-
-        return Ok(new {events});
-    }
+        { "events", _events.List() }
+    });
 }

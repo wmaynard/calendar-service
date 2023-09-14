@@ -11,32 +11,20 @@ namespace Rumble.Platform.CalendarService.Controllers;
 public class AdminController : PlatformController
 {
 #pragma warning disable
-    private readonly EventService _eventService;
+    private readonly EventService _events;
 #pragma warning restore
     
     // Adds in events to Mongo
     [HttpPost, Route("events"), HealthMonitor(weight: 100)]
-    public async Task<ObjectResult> AddEvents()
+    public ActionResult AddEvents() => Ok(new
     {
-        List<Event> events = Require<List<Event>>(key: "events");
-
-        long added = await _eventService.BulkAdd(events);
-
-        return Ok(new
-                  {
-                      eventsAdded = added
-                  });
-    }
+        eventsAdded = _events.BulkAdd(Require<Event[]>("events"))
+    });
     
     // Clears out events
     [HttpDelete, Route("events"), HealthMonitor(weight: 10)]
-    public async Task<ObjectResult> ClearEvents()
+    public ActionResult ClearEvents() => Ok(new
     {
-        long cleared = await _eventService.ClearAll();
-
-        return Ok(new
-                  {
-                      eventsCleared = cleared
-                  });
-    }
+        eventsCleared = _events.ClearAll()
+    });
 }
