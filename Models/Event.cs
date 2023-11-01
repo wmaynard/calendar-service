@@ -32,16 +32,8 @@ public class Event : PlatformCollectionDocument
     [JsonInclude, JsonPropertyName(FRIENDLY_KEY_DESCRIPTION)]
     public string Description { get; set; }
 
-    public enum EventType
-    {
-        Undefined,
-        Banners,
-        Calendars,
-        Events,
-        Quests,
-        Sales,
-        Leaderboards
-    }
+    public enum EventType { Undefined, Banners, Calendars, Events, Quests, Sales, Leaderboards }
+    
     [BsonElement(DB_KEY_TYPE)]
     [JsonInclude, JsonPropertyName(FRIENDLY_KEY_TYPE)]
     public EventType Type { get; set; }
@@ -53,11 +45,6 @@ public class Event : PlatformCollectionDocument
     [BsonElement(DB_KEY_END)]
     [JsonInclude, JsonPropertyName(FRIENDLY_KEY_END)]
     public long End { get; set; }
-    
-    // TODO implement repeating later on
-    // [BsonElement(DB_KEY_REPEAT), BsonIgnoreIfNull]
-    // [JsonInclude, JsonPropertyName(FRIENDLY_KEY_REPEAT), JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    // public DayOfWeek Repeat { get; set; } // 0-6, 0 starting with sunday
 
     protected override void Validate(out List<string> errors)
     {

@@ -7,7 +7,7 @@ namespace Rumble.Platform.CalendarService;
 public class Startup : PlatformStartup
 {
     protected override PlatformOptions ConfigureOptions(PlatformOptions options) => options
-         .SetProjectOwner(Owner.Nathan)
+         .SetProjectOwner(Owner.Will)
          .SetTokenAudience(Audience.CalendarService)
          .SetRegistrationName("Calendar")
 #if DEBUG
