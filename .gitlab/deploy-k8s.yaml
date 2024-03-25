@@ -33,7 +33,7 @@
     {
       "username": "${CI_PROJECT_NAME}",
       "channel": "C013XKM281J",
-      "icon_emoji": ":portalsvc:",
+      "icon_emoji": ":calsvc:",
       "unfurl_links": "false",
       "blocks": [{"type": "section", "text": {"type":"mrkdwn", "text": "Deployment Status: *${CI_JOB_STATUS}* - Env: ${CI_ENVIRONMENT_NAME} - Job: <${CI_JOB_URL}|#${CI_JOB_ID}>"}}]
     }
