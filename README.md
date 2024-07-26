@@ -1,7 +1,23 @@
 # Calendar Service
+
 A service for storing and providing information on events.
 
+## Acknowledgment
+
+Calendar Service was originally created for Rumble Entertainment (which later became R Studios), a mobile gaming company.  The service was responsible for translating various live ops and other promotional events into usable data for Rumble's web applications.  While the game client knew about events from the core gameplay server, the web applications were disconnected from game data.
+
+R Studios unfortunately closed its doors in July 2024.  This project has been released as open source with permission.
+
+As of this writing, there may still be existing references to Rumble's resources, such as Confluence links, but their absence doesn't have any significant impact.  Some documentation will also be missing until it can be recreated here, since with the company closure any feature specs and explainer articles originally written for Confluence / Slack channels were lost.
+
+While Rumble is shutting down, I'm grateful for the opportunities and human connections I had working there.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
+
 # Introduction
+
 This service allows for `events` to be stored in a database to be fetched at any time for easy viewing. The main purpose as of
 the time of writing is to allow the `Tower Portal` to have an easy way to display planned and ongoing `events`.
 

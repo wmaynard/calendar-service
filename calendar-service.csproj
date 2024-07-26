@@ -16,15 +16,15 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="platform-csharp-common" Version="1.3.157" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Content Include=".gitlab\deploy-k8s.yaml" />
       <Content Include=".gitlab\dev.values.yaml" />
       <Content Include=".gitlab\prod.values.yaml" />
       <Content Include=".gitlab\stage-a.values.yaml" />
       <Content Include=".gitlab\stage-b.values.yaml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="rumble-platform-common" Version="1.3.162" />
     </ItemGroup>
 
 </Project>
